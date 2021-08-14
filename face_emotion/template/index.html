@@ -1,0 +1,89 @@
+{% load static %}
+
+
+
+{% block content%}
+
+<header>
+  <section class="navbar navbar-default navbar-static-top" role="navigation" style="align-items: center;">
+       <div class="container">
+
+            <div class="navbar1">
+                 <a  href="{% url 'index'  %}"class="active" href="#"><i class="fa fa-fw fa-camera-retro"></i> Take picture</a>
+                 <a href="{% url 'emotion_page'  %}"><i class="fa fa-smile-o"></i> Detect Emotion </a>
+                 <a href="{% url 'attributes_page'%}"><i class="fa fa-user-secret"></i> Detect Attributes</a>
+                 <a href="{% url 'verification_page'%}"><i class="fa fa-user"></i> Verification</a>
+                 <a href="{% url 'mask_page'  %}"><i class="fa fa-check-circle"></i> Detect Mask</a>
+               </div>
+
+       </div>
+  </section>
+</header>
+
+
+    
+<br>
+<br>
+<br>
+  
+  <head>
+    <!-- Load an icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet"  href="{%  static  'css/style.css'  %}">
+    <link rel="stylesheet" href="{%  static  'css/chatbot.css'  %}" />
+    
+  </head>
+  
+  
+  
+
+  
+  
+  <body>
+    
+    
+    
+
+    
+
+<form action="{% url 'camera'  %}" style="
+margin-left: auto;
+margin-right: auto;
+width: 50%;
+height: 95%;
+">
+    <h1>Upload a photo of yourself:</h1>
+    
+    <button class="button" type="submit" >Submit</button>
+</form>
+
+<div class="chat-container" style="  position:fixed; bottom:0;width: 20% ; right: 0;"></div>
+    
+  </body>
+
+
+   
+
+<br>
+
+<script src="https://npm-scalableminds.s3.eu-central-1.amazonaws.com/@scalableminds/chatroom@master/dist/Chatroom.js"></script>
+  <script type="text/javascript">
+    var chatroom = new window.Chatroom({
+      host: "http://localhost:5005",
+      title: "ZARA",
+      container: document.querySelector(".chat-container"),
+      welcomeMessage: "Hi, I am Zara. How may I help you?",
+      speechRecognition: "en-US",
+      voiceLang: "en-US"
+    });
+    chatroom.openChat();
+  </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossorigin="anonymous"></script>
+
+
+
+
+</html>
+
+{% endblock %}
+

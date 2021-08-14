@@ -1,0 +1,209 @@
+body {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+label {
+    display: block;
+    font: 1rem 'Fira Sans', sans-serif;
+}
+
+
+.label-file {
+    cursor: pointer;
+    color: #00b1ca;
+    font-weight: bold;
+    background-color: #a1acb4; /* Green */
+                  border: none;
+                  color: white;
+                  padding: 15px 32px;
+                  text-align: center;
+                  text-decoration: none;
+                  display: inline-block;
+                  font-size: 16px;
+}
+.label-file2 {
+  cursor: pointer;
+  color: #00b1ca;
+  font-weight: bold;
+  background-color: #a1acb4; /* Green */
+                border: none;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+}
+.label-file:hover {
+    color: #25a5c4;
+}
+.label-file2:hover {
+  color: #25a5c4;
+}
+
+
+.input-file {
+    display: none;
+}
+.input-file2 {
+  display: none;
+
+}
+
+
+
+/* Style the navigation menu */
+.navbar1 {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+/* Navigation links */
+.navbar1 a {
+  float: left;
+  padding: 12px;
+  color: white;
+  text-decoration: none;
+  font-size: 17px;
+  width: 20%; /* Four equal-width links. If you have two links, use 50%, and 33.33% for three links, etc.. */
+  text-align: center; /* If you want the text to be centered */
+}
+
+/* Add a background color on mouse-over */
+.navbar1 a:hover {
+  background-color: #000;
+}
+
+/* Style the current/active link */
+.navbar1 a.active {
+  background-color: #04AA6D;
+}
+
+/* Add responsiveness - on screens less than 500px, make the navigation links appear on top of each other, instead of next to each other */
+@media screen and (max-width: 500px) {
+  .navbar1 a {
+    float: none;
+    display: block;
+    width: 1000%;
+    text-align: left; /* If you want the text to be left-aligned on small screens */
+  }
+}
+
+
+
+
+
+
+.button {
+  position: relative;
+  background-color: #04AA6D;
+  border: none;
+  font-size: 16px;
+  color: #FFFFFF;
+  padding:  15px 32px;
+  width: 200px;
+  text-align: center;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  text-decoration: sans-serif;
+  overflow: hidden;
+  cursor: pointer;
+  display: block;
+}
+
+.button:after {
+  content: "";
+  background: #90EE90;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px!important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+.button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}
+
+
+* {box-sizing: border-box;}
+    
+.img-comp-container {
+position: relative;
+height: 300px; /*should be the same height as the images*/
+display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.img-comp-img {
+position: absolute;
+width: auto;
+height: auto;
+overflow:hidden;
+}
+
+.img-comp-img img {
+display:block;
+vertical-align:middle;
+}
+
+.img-comp-slider {
+position: absolute;
+z-index:9;
+cursor: ew-resize;
+/*set the appearance of the slider:*/
+width: 40px;
+height: 40px;
+background-color: #2196F3;
+opacity: 0.7;
+border-radius: 50%;
+}
+
+.split {
+      width: 100%;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      overflow-x: hidden;
+      padding-top: 200px;
+      height:100%;
+  }
+
+.left {
+  left: 0;
+  width: 50%;
+  float: left;
+  height: 100%;
+}
+
+.right {
+  right: 0;
+  width: 50%;
+  float: right;
+  height: 100%;
+}
+
+

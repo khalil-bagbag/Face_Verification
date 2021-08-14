@@ -1,0 +1,171 @@
+{% load static %}
+
+
+
+
+
+{% block content%}
+<head>
+  <!-- Load an icon library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet"  href="{%  static  'css/style.css'  %}">
+  <link rel="stylesheet" href="https://npm-scalableminds.s3.eu-central-1.amazonaws.com/@scalableminds/chatroom@master/dist/Chatroom.css" />
+ 
+  
+</head>
+
+<header>
+  
+       
+
+            <div class="navbar1">
+                 <a  href="{% url 'index'  %}" href="#"><i class="fa fa-fw fa-camera-retro"></i> Take picture</a>
+                 <a href="{% url 'emotion_page'  %}"> <i class="fa fa-smile-o"></i> Detect Emotion</a>
+                 <a href="{% url 'attributes_page'%}"><i class="fa fa-user-secret"></i> Detect Attributes</a>
+                 <a href="{% url 'verification_page'%}"  class="active"><i class="fa fa-user"></i> Verification</a>
+                 <a href="{% url 'mask_page'  %}" ><i class="fa fa-check-circle"></i> Detect Mask</a>
+             </div>
+
+      
+</header>
+
+      
+  
+  <h1 style=" text-align: center" >Django- Verification</h1>
+  <br>
+  <br>
+  <br>
+
+  
+  
+  <body>
+    
+    
+    
+
+    <form method="post" enctype="multipart/form-data" action="{% url 'verification'  %} " >
+  
+      {% csrf_token %}
+      
+      <div class="row "  >
+        <div class="column"  >
+          
+          <div class="input">
+            <label for="file" class="label-file">Upload Image File Here:</label>
+            <input  name="Path_file" id="file" class="input-file" type="file">     
+          </div>
+          <img src="data:image/png;base64,{{image1}}" id="canvasOutput"  width="500" height="400" >
+        </div>
+        <div class="column "  >
+          
+          <div class="input">
+            <label for="file2" class="label-file2">Upload Image File Here:</label>
+            <input  name="Path_file2" id="file2" class="input-file2" type="file"> 
+                
+          </div>
+          
+          <img id="canvasOutput2" src="data:image/png;base64,{{image2}}" width="500" height="400" >
+          <button class="button" type="submit" >Predict</button>
+        </div>
+        <div class="column" >
+          <textarea id="story" name="story" rows="5" cols="5" style="display: block;
+          margin-right: auto;
+          width: 50%;
+          height: 25%;
+          padding-top: 100px;
+          margin-top:100px;">
+            
+              {{  a }}
+                   
+          </textarea>
+      </div>
+      
+    </form>
+    <br>
+    <br>
+
+  
+
+    
+
+    
+    
+    
+       
+  </body>
+  
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    .column {
+      float: left;
+      width: 33.33%;
+      margin-left: auto;
+      margin-right: auto;
+      
+    }
+    
+    /* Clearfix (clear floats) */
+    .row::after {
+      display: flex;
+      margin-left: auto;
+      margin-right: auto;
+      
+    }
+    
+  </style>
+
+   
+
+
+
+<script src="https://npm-scalableminds.s3.eu-central-1.amazonaws.com/@scalableminds/chatroom@master/dist/Chatroom.js"/></script>
+    <script type="text/javascript">
+      var chatroom = new window.Chatroom({
+        host: "http://localhost:5005",
+        title: "Zara ",
+        container: document.querySelector(".chat-container"),
+        welcomeMessage: "Hi,how can i help you ?",
+        speechRecognition: "en-US",
+        voiceLang: "en-US"
+      });
+      chatroom.openChat();
+</script>
+
+<script>
+    let inputElement = document.getElementById('file');
+    let canvas = document.getElementById('canvasOutput');
+    inputElement.addEventListener('change', (e) => {
+
+    canvas.src = URL.createObjectURL(e.target.files[0]);
+
+}, false);
+
+</script>
+
+<script>
+  let inputElement2 = document.getElementById('file2');
+  let canvas2 = document.getElementById('canvasOutput2');
+  inputElement2.addEventListener('change', (e) => {
+
+  canvas2.src = URL.createObjectURL(e.target.files[0]);
+
+}, false);
+
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/js/all.min.js" integrity="sha256-qM7QTJSlvtPSxVRjVWNM2OfTAz/3k5ovHOKmKXuYMO4=" crossorigin="anonymous"></script>
+
+
+
+</html>
+
+
+
+
+
+
+
+{% endblock %}
