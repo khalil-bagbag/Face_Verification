@@ -30,7 +30,7 @@ This project aims :
 
 ## Screen_Shots
 
-![alt text](https://github.com/khalil-bagbag/Face_Verification_git/blob/main/Screen_Shots/attributes.png)
+![alt text](https://github.com/khalil-bagbag/Face_Verification/blob/main/Screen_Shots/Attributes.png)
 ![alt text](https://github.com/khalil-bagbag/Face_Verification_git/blob/main/Screen_Shots/emotion.png)
 ![alt text](https://github.com/khalil-bagbag/Face_Verification_git/blob/main/Screen_Shots/mask.png)
 ![alt text](https://github.com/khalil-bagbag/Face_Verification_git/blob/main/Screen_Shots/verification.png)
